@@ -1,8 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>net5.0</TargetFramework>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
     </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="OnBarcode.Barcode.WinForms, Version=8.4.0.40320, Culture=neutral, PublicKeyToken=4da8d7f865f70e30">
+        <HintPath>..\..\..\Downloads\OnBarcode.BarcodeGenerator.DotnetSuite\OnBarcode.BarcodeGenerator.DotnetSuite\dll\Net40\OnBarcode.Barcode.WinForms.dll</HintPath>
+      </Reference>
+    </ItemGroup>
 
 </Project>
