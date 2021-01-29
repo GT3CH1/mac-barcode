@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OnBarcode.Barcode;
 
 namespace MacBarcode
 {
@@ -19,5 +20,6 @@ namespace MacBarcode
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        
     }
 }

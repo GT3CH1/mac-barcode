@@ -12,4 +12,8 @@
       </Reference>
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="BarcodeLib" Version="2.2.10" />
+    </ItemGroup>
+
 </Project>
