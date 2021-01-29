@@ -13,7 +13,6 @@ namespace MacBarcode
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             String macAddr = getMacAddr();
             String location = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\test.png";
             Console.WriteLine(location.Trim());
