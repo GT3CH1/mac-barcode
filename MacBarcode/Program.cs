@@ -51,30 +51,5 @@ namespace MacBarcode
             Console.WriteLine(finalMac);
             return finalMac;
         }
-
-        [DllImport("shell32.dll")]
-        static extern int FindExecutable(string lpFile, string lpDirectory, [Out] StringBuilder lpResult);
-
-        public static void OpenImage(string imagePath)
-        {
-            var exePathReturnValue = new StringBuilder();
-            FindExecutable(Path.GetFileName(imagePath), Path.GetDirectoryName(imagePath), exePathReturnValue);
-            var exePath = exePathReturnValue.ToString();
-            Console.WriteLine("exepath: " + exePath);
-            var arguments = "\"" + imagePath + "\"";
-
-            // Handle cases where the default application is photoviewer.dll.
-            if (Path.GetFileName(exePath).Equals("photoviewer.dll", StringComparison.InvariantCultureIgnoreCase))
-            {
-                arguments = "\"" + exePath + "\", ImageView_Fullscreen " + imagePath;
-                exePath = "rundll32";
-            }
-            var process = new Process();
-            process.StartInfo.FileName = exePath;
-            process.StartInfo.Arguments = arguments;
-            Console.WriteLine("args: " + arguments);
-
-            process.Start();
-        }
     }
 }
