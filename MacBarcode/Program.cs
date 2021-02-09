@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
-using System.Runtime.InteropServices;
-using System.Text;
 
 namespace MacBarcode
 {
@@ -41,10 +38,7 @@ namespace MacBarcode
             for (int i = 0; i < macAddr.Length; i++)
             {
                 if (i != 0 && i % 2 == 0)
-                {
                     finalMac += ":";
-                }
-
                 finalMac += macArr[i];
             }
 
