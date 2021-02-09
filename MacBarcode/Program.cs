@@ -13,12 +13,10 @@ namespace MacBarcode
         static void Main(string[] args)
         {
             String macAddr = getMacAddr();
-            String location = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\test.png";
+            String location = Path.GetTempPath() + "\\macaddrbarcode.png";
             Console.WriteLine(location.Trim());
             GenerateBacode(macAddr, location);
             Process.Start(@"cmd.exe",@"/c " + location);
-            Thread.Sleep(2000);
-            File.Delete(location);
         }
 
         private static void GenerateBacode(string _data, string _filename)
