@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Threading;
 
 namespace MacBarcode
 {
@@ -16,6 +17,7 @@ namespace MacBarcode
             Console.WriteLine(location.Trim());
             GenerateBacode(macAddr, location);
             Process.Start(@"cmd.exe",@"/c " + location);
+            Thread.Sleep(2000);
             File.Delete(location);
         }
 
